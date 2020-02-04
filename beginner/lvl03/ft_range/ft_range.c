@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nneuda <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nneuda <nneuda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/30 11:53:48 by nneuda            #+#    #+#             */
-/*   Updated: 2019/07/30 13:15:45 by nneuda           ###   ########.fr       */
+/*   Updated: 2020/02/03 20:27:51 by nneuda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+// #include <stdio.h>
 
 int     *ft_range(int start, int end)
 {
@@ -25,14 +25,11 @@ int     *ft_range(int start, int end)
 	res = (int*)(malloc(sizeof (int) * ((end - start) * sign + 1)));
 	i = -1;
 	while (++i <= (end - start) * sign)
-	{
 		res[i] = start + (i * sign);
-		printf("%d \n", res[i]);
-	}
 	return(res);	
 }
 
-int main()
-{
-	printf("1st elem:%d\n", *ft_range(0,0));
-}
+// int main()
+// {
+// 	printf("1st elem:%d\n", *ft_range(0,0));
+// }

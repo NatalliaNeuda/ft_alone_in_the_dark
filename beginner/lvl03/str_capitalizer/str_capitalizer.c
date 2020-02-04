@@ -6,13 +6,12 @@
 /*   By: nneuda <nneuda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 13:46:22 by nneuda            #+#    #+#             */
-/*   Updated: 2019/09/24 00:31:12 by nneuda           ###   ########.fr       */
+/*   Updated: 2020/02/03 19:45:44 by nneuda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	str_capitalizer(char *str)
 {
@@ -32,20 +31,20 @@ void	str_capitalizer(char *str)
 	}
 }
 
-int		main(int argc, char *argv[])
+int		main(int ac, char *av[])
 {
 	int		i;
 
-	if (argc < 2)
+	if (ac < 2)
 		write(1, "\n", 1);
 	else
 	{
 		i = 1;
-		while (i < argc)
+		while (i < ac)
 		{
-			str_capitalizer(argv[i]);
+			str_capitalizer(av[i]);
 			write(1, "\n", 1);
-			i += 1;
+			i++;
 		}
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: nneuda <nneuda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 15:49:43 by nneuda            #+#    #+#             */
-/*   Updated: 2019/12/15 21:15:33 by nneuda           ###   ########.fr       */
+/*   Updated: 2020/02/03 21:29:25 by nneuda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ int main(int ac, char *av[])
 			}
 			while(is_prime(prime) && nb % prime == 0)
 			{
-				printf("%d*", prime);
+				if (nb != prime)
+					printf("%d*", prime);
+				else 
+					printf("%d", prime);
 				nb /= prime;
 			}
 			prime++;

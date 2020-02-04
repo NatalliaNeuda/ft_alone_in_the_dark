@@ -6,11 +6,11 @@
 /*   By: nneuda <nneuda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 10:45:00 by exam              #+#    #+#             */
-/*   Updated: 2019/10/22 16:09:01 by nneuda           ###   ########.fr       */
+/*   Updated: 2020/02/03 21:16:24 by nneuda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 void	sort_int_tab(int *tab, unsigned int size)
 {
@@ -20,30 +20,35 @@ void	sort_int_tab(int *tab, unsigned int size)
 
 	x = 0;
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		n = 1;
-		while (tab[i] > tab[i + n] && tab[i + n] &&  i <= size)
+		while (i + n < size)
 		{
-			x = tab[i]; 
-			tab[i] = tab[i + n];
-			tab[i + n] = x;
+			if (tab[i] >= tab[i + n])
+			{
+				x = tab[i]; 
+				tab[i] = tab[i + n];
+				tab[i + n] = x;
+			}
 			n++;
 		}	
 		i++;
 	}
-/*	i = 0;
-	while (tab[i] && i <= size)
+}
+
+int main(void)
+{
+	int i;
+	int tab[8] = {0, 1, 4, 2, 0, 42, 59, 67};
+
+	sort_int_tab(tab, 8);
+	i = 0;
+	while (i < 8)
 	{
 		printf("%d\t", tab[i]);
 		i++;
 	}
-	printf("\n");*/
-}
-/*
-int main(void)
-{
-	int tab[10] = {9, -5, -1, 5, -1};
-	sort_int_tab(tab, 5);
+	printf("\n");
 	return (0);
-}*/
+}
