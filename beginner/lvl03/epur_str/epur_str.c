@@ -6,6 +6,7 @@ int	 main(int ac, char const *av[])
     int i;
     
     i = 0;
+    flg = 0;
     if (ac == 2)
     {
     while (av[1][i] == ' ' || av[1][i]== '\t')
