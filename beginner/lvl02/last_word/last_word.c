@@ -6,7 +6,7 @@
 /*   By: nneuda <nneuda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 19:47:39 by nneuda            #+#    #+#             */
-/*   Updated: 2020/02/03 19:32:11 by nneuda           ###   ########.fr       */
+/*   Updated: 2020/02/17 23:49:08 by nneuda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,23 @@ int main(int ac, char *av[])
 	i = 0;
 	if (ac == 2)
 	{
-		while (av[1][i] != '\0')
+		
+		while (av[1][i])
 			i++;
 		i = i - 1;
-		while ((av[1][i] == ' ' || av[1][i] == '\t'))
+		while (av[1][i] == ' ' || av[1][i] == '\t' )
 			i--;
-		while (av[1][i] != ' ' && av[1][i] != '\t')
+		while (av[1][i] != ' ' && av[1][i] != '\t' && i != 0)
 			i--;
-		i = i + 1;
-		while ((av[1][i] != ' ' && av[1][i] != '\t') && av[1][i])
+		if (i != 0)
 		{
-			write (1, &av[1][i], 1);
 			i++;
+			while ((av[1][i] != ' ' && av[1][i] != '\t') && av[1][i])
+				write (1, &av[1][i++], 1);
 		}
+		else 
+			while (av[1][i])
+				write(1, &av[1][i++], 1);
 	}
 	write (1, "\n", 1);
 	return (0);
