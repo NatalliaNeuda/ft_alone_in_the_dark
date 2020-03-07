@@ -6,7 +6,7 @@
 /*   By: nneuda <nneuda@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 14:15:01 by nneuda            #+#    #+#             */
-/*   Updated: 2020/02/27 19:36:28 by nneuda           ###   ########.fr       */
+/*   Updated: 2020/02/27 20:19:09 by nneuda           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int main(int ac, char *av[])
     int i = 0;
     int j = 0;
     int first = 1;
-    int begunok = 0;
 
     if (ac == 2)
     {
